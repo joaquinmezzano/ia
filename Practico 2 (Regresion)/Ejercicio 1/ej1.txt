@@ -1,0 +1,15 @@
+Derivamos de la formula del MSE respecto a w y b para obtener las formulas de regresión lineal dada la recta y = wx+b
+    w = (n∑xy - ∑x - ∑y)/(n∑x² - (∑x)²)
+    b = (∑y - w∑x)/n
+
+Sumas:
+    ∑x = 1+2+3+4+5 = 15
+    ∑y = 2+3+5+7+8 = 25
+    ∑x² = 1²+2²+3²+4²+5² = 55
+    ∑xy = (1)(2)+(2)(3)+(3)(5)+(4)(7)+(5)(8) = 91
+
+Calculamos reemplazando:
+    w = 1.6
+    b = 0.2
+
+La recta ajustada es y = 1.6x+0.2
