@@ -1,0 +1,45 @@
+    x1 | x2 | x1 OR x2
+    -- | -- | --------
+    0  | 0  | 0
+    0  | 1  | 1
+    1  | 0  | 1
+    1  | 1  | 1
+
+Perceptrón inicial    -> y = f(w1x1 + w2x2 + b)
+Pesos iniciales       -> w1 = 0, w2 = 0, b = 0
+Tasa de aprendizaje   -> n = 1
+Función de activación -> f(z) = {1 si z >= 0
+                                {0 si z < 0
+
+Reglas de actualización:
+    wi <- wi+n(Yreal - Ypred)*xi
+    b  <- b+n(Yreal - Ypred) 
+
+Entrenamiento manual paso a paso:
+    CASO (0, 0) -> Salida real = 0
+                -> Predicción = f(0) = 1
+                -> Error = -1 -> Hay que actualizar
+                w1 = 0, w2 = 0, b = -1
+                
+    CASO (0, 1) -> Salida real = 1
+                -> Predicción = f(w1*0+w2*1+b) = f(0+0-1) = f(-1) = 0
+                -> Error = 1 -> Hay que actualizar
+                w1 = 0, w2 = 1, b = 0
+    
+    CASO (1, 0) -> Salida real = 1
+                -> Predicción = f(1*0+0*1+0) = f(0+0+0) = f(0) = 0
+                -> Error = 1 -> Hay que actualizar
+                w1 = 1, w2 = 1, b = 1
+    
+    CASO (1, 1) -> Salida real = 1
+                -> Predicción = f(1*1+1*1+1) = f(1+1+1) = f(3) = 1
+                -> Error = 0 -> NO hay que actualizar
+                w1 = 1, w2 = 1, b = 1
+
+Con tasa de aprendizaje = 1, partiendo de w1=w2=b=0, tras 1 época completa de entrenamiento con los 4 casos ya se llega a pesos que modelan el OR.
+Una solución válida es: w1 = 1, w2 = 1, b = -0.5
+Con esto tenemos:
+    - (0, 0) -> -0.5 -> 0
+    - (0, 1) -> 0.5 -> 1
+    - (1, 0) -> 0.5 -> 1
+    - (1, 1) -> 1.5 -> 1

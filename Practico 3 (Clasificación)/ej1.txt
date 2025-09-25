@@ -1,0 +1,17 @@
+200 pruebas
+    RESULTADOS REALES -> 40 enfermos/160 sanos
+    RESULTADOS CLASIFICADOR -> 50 enfermos de los cuales 30 si lo estaban
+
+a) 
+TP (True Positives)  -> 30
+FP (False Positives) -> 20
+TN (True Negatives)  -> 140 (160-20)
+FN (False Negatives) -> 10  (40-30)
+
+b)
+Accuracy    -> (TP+TN)/(TP+TN+FP+FN)                 -> (30+140)/(30+140+20+10) = 170/200 = 0.85
+Precision   -> TP/(TP+FP)                            -> 30/(30+20) = 30/50 = 0.6
+Recall      -> TP/(TP+FN)                            -> 30/(30+10) = 30/40 = 0.75
+F1-Score    -> 2*(Precision*Recall/Precision+Recall) -> 2*(0.6*0.75/0.6+0.75) = 2*(0.45/1.35) = 2*0.33 = 0.66
+
+c)
